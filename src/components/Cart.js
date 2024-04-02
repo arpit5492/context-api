@@ -7,6 +7,7 @@ const Cart = (props) => {
     console.log("Component rendered");
     return (
         <div className="col-sm-4 mr-3">
+// <<<<<<< context-api-impl
             <div className="card" style={{height: "300px"}}>
                 <div className="card-body">
                     <h4 className="card-title">Cart Component</h4>
@@ -18,6 +19,17 @@ const Cart = (props) => {
                     })}
                     <div className="fw-bold">Price: ${tPrice}</div>
                 </div>
+// =======
+          <div className="card" style={{height: "300px"}}>
+            <div className="card-body">
+              <h4 className="card-title">Cart Component</h4>
+              <hr />
+              {products.map((prod, index) => {
+                return (
+                    <li key={index}>{prod}</li>
+                )
+              })}
+// >>>>>>> master
             </div>
         </div>
     )
