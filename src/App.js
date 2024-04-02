@@ -4,18 +4,36 @@ import Cart from './components/Cart';
 import Total from './components/Total';
 
 function App() {
-  const [prods, setProds] = useState([
+  const prods = [
     {pName: "Apples", price: 2.34},
     {pName: "Bananas", price: 3.21},
     {pName: "Grapes", price: 6.78},
     {pName: "Oranges", price: 5.43}
-  ]);
+  ];
 
   const prodItems = prods.map((prod, index) => {
     return (
-      <option key={index}>{prod.pName} - {prod.price}</option>
+      <option key={index} value={prod.price}>{prod.pName} - ${prod.price}</option>
     )
   });
+
+  const [cart, setCart] = useState([]);
+  const [tPrice, setPrice] = useState(0);
+
+  const prodHandler = (e) => {
+    const text = (e.target.options[e.target.selectedIndex].text);
+    const price = parseFloat(e.target.value);
+    // console.log(typeof(price));
+    const total = tPrice + price;
+    // console.log(text);
+    const tCart = [...cart];
+    tCart.push(text);
+    // console.log(tCart);
+    
+    setCart(tCart);
+    setPrice(total);
+    // console.log(cart);
+  }
   return (
     <div className="App">
       <div className="row pt-4">
@@ -24,14 +42,18 @@ function App() {
             <div className="card-body">
               <h4 className="card-title">Purchase Component</h4>
               <hr />
-              <select className="form-select" aria-label="default select example">
+              <select onChange={prodHandler} className="form-select" aria-label="default select example">
                 {prodItems}
               </select>
             </div>
           </div>
         </div>
-        <Cart />
-        <Total />
+        <Cart 
+          products = {cart}
+        />
+        <Total 
+          total = {tPrice}
+        />
       </div>
     </div>
   );
