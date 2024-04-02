@@ -1,4 +1,6 @@
 import './App.css';
+import Cart from './components/Cart';
+import Total from './components/Total';
 
 function App() {
   return (
@@ -18,27 +20,8 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="col-sm-4 mr-3">
-          <div className="card" style={{height: "300px"}}>
-            <div className="card-body">
-              <h4 className="card-title">Cart Component</h4>
-              <hr />
-              <p>Apples - $2.34</p>
-              <p>Oranges - $3.21</p>
-              <p>Bananas - $5.43</p>
-              <p>Grapes - $6.78</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card" style={{height: "300px"}}>
-            <div className="card-body">
-              <h4 className="card-title">Total price component</h4>
-              <hr />
-              <h4>Total: $56</h4>
-            </div>
-          </div>
-        </div>
+        <Cart />
+        <Total />
       </div>
     </div>
   );
