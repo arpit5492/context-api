@@ -17,7 +17,7 @@ const Cart = (props) => {
                             <li key={index}>{prod}</li>
                         )
                     })}
-                    <ul className="fw-bold">Price: ${tPrice}</ul>
+                    <div className="fw-bold">Price: ${tPrice}</div>
                 </div>
             </div>
         </div>
