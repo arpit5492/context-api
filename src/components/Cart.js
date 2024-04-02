@@ -9,7 +9,7 @@ const Cart = (props) => {
               <hr />
               {products.map((prod, index) => {
                 return (
-                    <p key={index}>{prod}</p>
+                    <li key={index}>{prod}</li>
                 )
               })}
             </div>

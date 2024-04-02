@@ -5,10 +5,10 @@ import Total from './components/Total';
 
 function App() {
   const prods = [
-    {pName: "Apples", price: 2.34},
-    {pName: "Bananas", price: 3.21},
-    {pName: "Grapes", price: 6.78},
-    {pName: "Oranges", price: 5.43}
+    {pName: "Apples", price: 1.45},
+    {pName: "Bananas", price: 1.67},
+    {pName: "Grapes", price: 2.32},
+    {pName: "Oranges", price: 7.89}
   ];
 
   const prodItems = prods.map((prod, index) => {
@@ -21,11 +21,11 @@ function App() {
   const [tPrice, setPrice] = useState(0);
 
   const prodHandler = (e) => {
-    const text = (e.target.options[e.target.selectedIndex].text);
+    const text = (e.target.options[e.target.selectedIndex].innerHTML);
     const price = parseFloat(e.target.value);
     // console.log(typeof(price));
     const total = tPrice + price;
-    // console.log(text);
+    console.log(text);
     const tCart = [...cart];
     tCart.push(text);
     // console.log(tCart);
