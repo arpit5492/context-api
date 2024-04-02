@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Cart from './components/Cart';
 import Total from './components/Total';
+import totalContext from './store/TotalContext';
 
 function App() {
   const prods = [
@@ -48,12 +49,13 @@ function App() {
             </div>
           </div>
         </div>
-        <Cart 
-          products = {cart}
-        />
-        <Total 
-          total = {tPrice}
-        />
+        
+        <totalContext.Provider value={tPrice}>
+          <Cart 
+            products = {cart}
+          />
+          <Total />
+        </totalContext.Provider>
       </div>
     </div>
   );
