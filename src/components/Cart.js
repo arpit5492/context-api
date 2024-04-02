@@ -3,7 +3,6 @@ import totalContext from "../store/TotalContext";
 
 const Cart = (props) => {
     const {products} = props;
-    // console.log(products);
     const tPrice = useContext(totalContext);
     console.log("Component rendered");
     return (
